@@ -1,0 +1,34 @@
+# Terraform working directories and local state
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform.tfstate.lock.info
+
+# Local values, plans, overrides, and crash logs
+*.tfvars
+*.tfvars.json
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# SSH keys and local credentials
+*.pem
+*.key
+*.pub
+.aws/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+*~
+
+# Keep .terraform.lock.hcl under version control after successful init.

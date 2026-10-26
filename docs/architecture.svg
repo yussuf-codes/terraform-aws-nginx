@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850" role="img" aria-labelledby="title desc">
+<title id="title">Terraform AWS Nginx architecture</title>
+<desc id="desc">Terraform provisions a VPC with a public subnet and one EC2 instance running Nginx. An internet gateway and route table provide internet routing. The security group allows HTTP on port 80 from anywhere and SSH on port 22 from a trusted CIDR.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2783DE"/></marker></defs>
+<rect width="1400" height="850" fill="#F9F8F7"/>
+<g font-family="Arial, sans-serif" fill="#2C2C2B">
+<text x="64" y="70" font-size="17" font-weight="700" letter-spacing="2" fill="#52606D">TERRAFORM / AWS</text>
+<text x="64" y="121" font-size="40" font-weight="700">One public server. Defined as code.</text>
+<text x="64" y="158" font-size="20" fill="#52606D">Existing infrastructure · Ubuntu + Nginx · Default configuration</text>
+<rect x="64" y="208" width="280" height="116" rx="12" fill="#FFFFFF" stroke="#CBD5DF"/>
+<text x="88" y="248" font-size="23" font-weight="700">Web visitors</text><text x="88" y="284" font-size="19" fill="#52606D">HTTP · TCP 80</text>
+<rect x="64" y="350" width="280" height="116" rx="12" fill="#FFFFFF" stroke="#CBD5DF"/>
+<text x="88" y="390" font-size="23" font-weight="700">Trusted operator</text><text x="88" y="426" font-size="19" fill="#52606D">SSH · TCP 22 · CIDR-limited</text>
+<rect x="64" y="548" width="280" height="142" rx="12" fill="#E5F2FC" stroke="#A5C8E7"/>
+<text x="88" y="590" font-size="23" font-weight="700">Terraform</text><text x="88" y="626" font-size="19" fill="#52606D">AWS provider + SSH key</text><text x="88" y="658" font-size="18" fill="#52606D">Provisioning, not traffic</text>
+<rect x="570" y="208" width="766" height="508" rx="16" fill="#FFFFFF" stroke="#A5C8E7" stroke-width="2"/>
+<text x="598" y="249" font-size="24" font-weight="700">VPC</text><text x="669" y="249" font-size="19" fill="#52606D">10.0.0.0/16 · us-west-1</text>
+<rect x="418" y="294" width="300" height="124" rx="12" fill="#E5F2FC" stroke="#2783DE" stroke-width="2"/>
+<text x="443" y="340" font-size="22" font-weight="700">Internet gateway</text><text x="443" y="380" font-size="18" fill="#334E68">Public route: 0.0.0.0/0</text>
+<path d="M344 268H382V332H416" fill="none" stroke="#2783DE" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M344 410H382V380H416" fill="none" stroke="#2783DE" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="772" y="286" width="532" height="332" rx="12" fill="#F9F8F7" stroke="#CBD5DF"/>
+<text x="796" y="325" font-size="23" font-weight="700">Public subnet</text><text x="796" y="357" font-size="18" fill="#52606D">10.0.1.0/24 · Public IPv4 assigned</text>
+<rect x="796" y="382" width="484" height="210" rx="10" fill="#FFFFFF" stroke="#2783DE" stroke-width="2"/>
+<text x="820" y="420" font-size="18" fill="#1966AA" font-weight="700">SECURITY GROUP</text>
+<text x="820" y="458" font-size="25" font-weight="700">EC2 / Ubuntu / Nginx</text>
+<text x="820" y="496" font-size="19" fill="#52606D">t3.micro · 8 GiB gp3 root volume</text>
+<text x="820" y="530" font-size="18" fill="#52606D">HTTP: anywhere · SSH: trusted CIDR</text>
+<text x="820" y="562" font-size="18" fill="#52606D">Outbound: all traffic allowed</text>
+<path d="M718 356H744V462H794" fill="none" stroke="#2783DE" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M344 619H536V668H1120" fill="none" stroke="#7D7A75" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<text x="598" y="651" font-size="17" fill="#52606D">Manages the resources shown</text>
+<path d="M64 767H1336" stroke="#D5DAD9"/>
+<text x="64" y="802" font-size="18" fill="#52606D">Learning deployment · No TLS · No load balancer · No additional infrastructure</text>
+</g></svg>
